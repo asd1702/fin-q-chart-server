@@ -1,0 +1,42 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Candle1m {
+  time DateTime @db.Timestamptz
+  symbol String @db.VarChar(20)
+  open   Float
+  high   Float
+  low    Float
+  close  Float
+  volume Float
+
+  @@id([time, symbol])
+}
+
+// Aggregated candles derived from 1m base candles.
+// timeframe is stored in minutes: 5, 15, 60, 240
+model CandleAgg {
+  startTime DateTime @db.Timestamptz
+  symbol    String   @db.VarChar(20)
+  timeframe Int      // minutes
+  open      Float
+  high      Float
+  low       Float
+  close     Float
+  volume    Float
+
+  @@id([startTime, symbol, timeframe])
+  @@index([symbol, timeframe, startTime])
+}
