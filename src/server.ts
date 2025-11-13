@@ -1,8 +1,8 @@
-import config from './config/index.js';
+import config from './config/index';
 import http from 'http';
-import { createApp } from './app.js';
-import { initWebSocketServer } from './services/websocket.service.js';
-import { connectToTwelveData } from './services/twelvedata.service.js';
+import { createApp } from './app';
+import { initWebSocketServer } from './services/websocket.service';
+import { connectToTwelveData } from './services/twelvedata.service';
 
 const port = config.port;
 
@@ -12,7 +12,7 @@ const httpServer = http.createServer(app);
 
 initWebSocketServer(httpServer);
 
-app.listen(port, () => {
+httpServer.listen(port, () => {
   console.log(`Server is running at http://localhost:${port}`);
   connectToTwelveData();
 })

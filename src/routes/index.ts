@@ -1,6 +1,6 @@
 import { Router } from 'express';
-import candleRouter from './candle.routes.js';
-import aggregateRouter from './aggregate.routes.js';
+import candleRouter from './candle.routes';
+import aggregateRouter from './aggregate.routes';
 
 const router = Router();
 

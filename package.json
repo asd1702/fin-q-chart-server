@@ -7,7 +7,7 @@
     "migrate:create": "dotenv -e .env -- prisma migrate dev --create-only",
     "migrate:deploy": "dotenv -e .env -- prisma migrate deploy",
     "prisma:generate": "dotenv -e .env -- prisma generate",
-    "dev": "dotenv -e .env -- ts-node src/server.ts"
+  "dev": "dotenv -e .env -- ts-node src/server.ts"
   },
   "keywords": [],
   "author": "",

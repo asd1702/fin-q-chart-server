@@ -1,7 +1,7 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import type { Candle1m, CandleAgg } from '@prisma/client';
-import { prisma } from '../prisma.js';
-import { parseTimeframe } from '../timeframes.js';
+import { prisma } from '../prisma';
+import { parseTimeframe } from '../timeframes';
 
 const router = Router();
 

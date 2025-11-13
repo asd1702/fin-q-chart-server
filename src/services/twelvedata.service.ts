@@ -1,10 +1,10 @@
-import config from '../config/index.js';
+import config from '../config/index';
 import WebSocket from 'ws';
-import { CandleMaker } from '../candleMaker.js';
-import { prisma } from '../prisma.js';
-import { updateAggregationsFrom1m } from '../aggregation.js';
-import { timeframeToString } from '../timeframes.js';
-import { broadcast } from './websocket.service.js';
+import { CandleMaker } from '../candleMaker';
+import { prisma } from '../prisma';
+import { updateAggregationsFrom1m } from '../aggregation';
+import { timeframeToString } from '../timeframes';
+import { broadcast } from './websocket.service';
 
 const symbols = process.env.STREAM_SYMBOLS?.split(',') || ['SPY', 'QQQ', 'DIA', 'BTC/USD'];
 const candleMakers = new Map<string, CandleMaker>();
