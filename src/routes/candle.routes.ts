@@ -15,7 +15,7 @@ router.get(
   ) => {
   try {
     const { symbol, timeframe: tfStr } = req.params;
-    const limit = Number.parseInt(req.query.limit ?? '500', 10);
+    const limit = Number.parseInt(req.query.limit ?? '10000', 10);
     const timeframeMinutes = parseTimeframe(tfStr);
 
     // Under strict type checking, avoid implicit any by typing the result set

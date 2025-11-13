@@ -1,8 +1,8 @@
+import dotenv from 'dotenv';
+dotenv.config();
+
 import axios from 'axios';
 import { PrismaClient } from '@prisma/client';
-import dotenv from 'dotenv';
-
-dotenv.config();
 
 const prisma = new PrismaClient();
 const API_KEY = process.env.TWELVE_DATA_API_KEY;

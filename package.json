@@ -7,7 +7,7 @@
     "migrate:create": "dotenv -e .env -- prisma migrate dev --create-only",
     "migrate:deploy": "dotenv -e .env -- prisma migrate deploy",
     "prisma:generate": "dotenv -e .env -- prisma generate",
-  "dev": "dotenv -e .env -- ts-node src/server.ts"
+    "dev": "nodemon --watch src --ext ts --exec \"dotenv -e .env -- ts-node src/server.ts\""
   },
   "keywords": [],
   "author": "",
@@ -16,11 +16,13 @@
   "dependencies": {
     "@prisma/client": "^6.19.0",
     "axios": "^1.13.2",
+    "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "ws": "^8.18.3"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.5",
     "@types/node": "^24.10.0",
     "@types/ws": "^8.18.1",
