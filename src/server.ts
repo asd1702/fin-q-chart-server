@@ -1,4 +1,4 @@
-import config from './config/index';
+import config from './config';
 import http from 'http';
 import { createApp } from './app';
 import { initWebSocketServer } from './services/websocket.service';

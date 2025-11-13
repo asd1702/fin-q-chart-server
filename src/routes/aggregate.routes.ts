@@ -1,7 +1,7 @@
 import { Router, Request, Response, NextFunction } from 'express';
-import { prisma } from '../prisma';
-import { parseTimeframe } from '../timeframes';
-import { buildAggregations } from '../aggregation';
+import { prisma } from '../db/prisma';
+import { parseTimeframe } from '../models/timeframes';
+import { buildAggregations } from '../processing/aggregation';
 
 const router = Router();
 

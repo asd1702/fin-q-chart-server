@@ -1,6 +1,6 @@
-import { prisma } from './prisma';
-import { AggregatedCandle, Candle } from './types';
-import { AGG_TIMEFRAMES } from './timeframes';
+import { prisma } from '../db/prisma';
+import { AggregatedCandle, Candle } from '../models/types';
+import { AGG_TIMEFRAMES } from '../models/timeframes';
 
 // Build aggregated candle incrementally when a 1m candle completes.
 export async function updateAggregationsFrom1m(candle: Candle): Promise<AggregatedCandle[]> {

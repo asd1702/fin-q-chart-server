@@ -1,6 +1,6 @@
 import { WebSocket, WebSocketServer } from 'ws';
 import http from 'http';
-import { OutboundSocketMessage } from '../types';
+import { OutboundSocketMessage } from '../models/types';
 
 let wss: WebSocketServer | undefined;
 

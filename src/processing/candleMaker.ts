@@ -1,4 +1,4 @@
-import { Candle } from './types';
+import { Candle } from '../models/types';
 
 export class CandleMaker {
     private currentCandle: Candle | null = null;

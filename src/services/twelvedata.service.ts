@@ -1,9 +1,9 @@
 import config from '../config/index';
 import WebSocket from 'ws';
-import { CandleMaker } from '../candleMaker';
-import { prisma } from '../prisma';
-import { updateAggregationsFrom1m } from '../aggregation';
-import { timeframeToString } from '../timeframes';
+import { CandleMaker } from '../processing/candleMaker';
+import { prisma } from '../db/prisma';
+import { updateAggregationsFrom1m } from '../processing/aggregation';
+import { timeframeToString } from '../models/timeframes';
 import { broadcast } from './websocket.service';
 
 const symbols = process.env.STREAM_SYMBOLS?.split(',') || ['SPY', 'QQQ', 'DIA', 'BTC/USD'];
